@@ -24,8 +24,15 @@ import '../css/style.css'
 
 
 class TodoList extends React.Component{
+  constructor(){
+    super()
+
+    this.state = {
+      tododata: todoData
+    }
+  }
   render(){
-    const todoComponents = todoData.map(function(data){
+    const todoComponents = this.state.tododata.map(function(data){
       return(
         <TodoItem
           key={data.id}
@@ -34,7 +41,7 @@ class TodoList extends React.Component{
       )
     })
     return(
-      <div>
+      <div className='todo-list'>
         {todoComponents}
       </div>
     )
