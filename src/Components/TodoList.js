@@ -4,25 +4,6 @@ import todoData from '../json/todoData'
 import '../css/style.css'
 
 
-// function TodoList(){
-//
-//   console.log(todoData);
-//   const todo = todoData.map(function(data){
-//     return(
-//       <TodoItem
-//         key={data.id}
-//         item={data}
-//       />
-//     )
-//   })
-//   return(
-//     <div className='todo-list'>
-//       {todo}
-//     </div>
-//   )
-// }
-
-
 class TodoList extends React.Component{
   constructor(){
     super()
