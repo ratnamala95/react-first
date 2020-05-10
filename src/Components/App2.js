@@ -6,8 +6,19 @@ class App2 extends React.Component{
     super()
 
     this.state = {
-      isloggedIn: false
+      isloggedIn: false,
+      count: 0
     }
+
+    this.handleClick = this.handleClick.bind(this)
+  }
+
+  handleClick(){
+    this.setState((prevState)=>{
+      return{
+        count: prevState.count + 1
+      }
+    })
   }
 
   render(){
@@ -15,8 +26,9 @@ class App2 extends React.Component{
     return(
       <div>
         {/* <h1>You're currently logged {wordDisplay}</h1> */}
-        <img src='https://www.fillmurray.com/200/100' onMouseOver={()=> alert('mouse over!')}/>
-        <button onClick={() =>console.log('clicked!')}>Click Me</button>
+        {/* <img src='https://www.fillmurray.com/200/100' onMouseOver={()=> alert('mouse over!')}/> */}
+        <h1>{this.state.count}</h1>
+        <button onClick={this.handleClick}>Click Me</button>
       </div>
     )
   }
